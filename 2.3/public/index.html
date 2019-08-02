@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=any, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="tab-buttons">
+        <div class="tab-button">File</div>
+
+        <div class="tab-button">Edit</div>
+
+        <div class="tab-button">Selection</div>
+
+        <div class="tab-button">Help</div>
+    </div>
+    <script>
+        let elements = document.querySelectorAll('div.tab-buttons div.tab-button');
+
+        for (let ii = 0; ii < elements.length; ii++) {
+            let element = elements[ii];
+
+            element.onclick = activateButton;
+
+            element.onmouseover = buttonMouseMovement;
+            element.onmouseout = buttonMouseMovement;
+
+        }
+
+        function activateButton(e) {
+            let target = e.target;
+
+            alert('You clicked the ' + target.innerText.toLowerCase() + ' button');
+        }
+
+        function buttonMouseMovement(e) {
+            let target = e.target;
+
+            if (e.type === 'mouseover') {
+                target.style.color = 'white';
+                target.style.backgroundColor = 'blue';
+            } else  {
+                target.style.color = '';
+                target.style.backgroundColor = '';
+            }
+        }
+    </script>
+</body>
+</html>

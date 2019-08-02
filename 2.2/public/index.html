@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=any, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="tab-buttons">
+        <div class="tab-button" onclick="activateButton(event)" 
+            onmouseover="activateButton(event)"
+            onmouseout="activateButton(event)">File</div>
+        <div class="tab-button" onclick="activateButton(event)" onmouseover="activateButton(event)"
+        onmouseout="activateButton(event)">Edit</div>
+        <div class="tab-button" onclick="activateButton(event)" onmouseover="activateButton(event)"
+        onmouseout="activateButton(event)">Help</div>
+    </div>
+    <script>
+        function activateButton(e) {
+            let target = e.target;
+
+            if (e.type === 'click') {
+                alert('You clicked the ' + target.innerText.toLowerCase() + ' button');
+
+            } else if (e.type === 'mouseover') {
+                target.style.color = 'white';
+                target.style.backgroundColor = 'blue';
+            } else if (e.type === 'mouseout') {
+                target.style.color = '';
+                target.style.backgroundColor = '';
+            }
+
+        }
+    </script>
+</body>
+</html>
